@@ -34,7 +34,7 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({ onOpenDemo
   };
 
   return (
-    <section id="industries" className="py-20 lg:py-28 relative bg-[#090F1C] border-t border-slate-800/80">
+    <section id="industries" className="py-20 lg:py-28 relative bg-slate-50 border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
@@ -44,14 +44,14 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({ onOpenDemo
             <span>Target Verticals & Domain Expertise</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             Industries We{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-300">
               Serve & Transform
             </span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
             Our software frameworks are engineered to resolve domain-specific operational challenges across high-growth industry sectors in India and globally.
           </p>
         </div>
@@ -61,28 +61,28 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({ onOpenDemo
           {INDUSTRIES.map((industry: IndustryItem) => (
             <div
               key={industry.id}
-              className="group p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-blue-500/40 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 flex flex-col justify-between hover:-translate-y-1"
+              className="group p-6 rounded-2xl bg-slate-100/80 border border-slate-200 hover:border-blue-500/40 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 flex flex-col justify-between hover:-translate-y-1"
             >
               <div>
-                <div className="w-12 h-12 rounded-xl bg-slate-800/80 border border-slate-700/80 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 rounded-xl bg-slate-200/80 border border-slate-300/80 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
                   {getIndustryIcon(industry.icon)}
                 </div>
 
-                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
                   {industry.name}
                 </h3>
 
-                <p className="text-xs text-slate-400 leading-relaxed mb-4">
+                <p className="text-xs text-slate-500 leading-relaxed mb-4">
                   {industry.description}
                 </p>
               </div>
 
               <div>
-                <div className="pt-3 border-t border-slate-800/80">
+                <div className="pt-3 border-t border-slate-200/80">
                   <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider block mb-2">Key Solutions:</span>
                   <div className="flex flex-wrap gap-1">
                     {industry.solutions.map((sol, i) => (
-                      <span key={i} className="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-medium">
+                      <span key={i} className="text-[10px] px-2 py-0.5 rounded bg-slate-200 text-slate-700 font-medium">
                         {sol}
                       </span>
                     ))}
@@ -94,7 +94,7 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({ onOpenDemo
         </div>
 
         {/* Target Industries Notice */}
-        <div className="mt-12 p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between flex-wrap gap-3 text-xs text-slate-400 max-w-4xl mx-auto">
+        <div className="mt-12 p-4 rounded-xl bg-slate-100/60 border border-slate-200 flex items-center justify-between flex-wrap gap-3 text-xs text-slate-500 max-w-4xl mx-auto">
           <div className="flex items-center gap-2">
             <ShieldAlert className="w-4 h-4 text-cyan-400 flex-shrink-0" />
             <span>Presented as target industry capabilities and architectural solutions tailored for each vertical.</span>

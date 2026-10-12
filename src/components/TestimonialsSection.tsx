@@ -16,7 +16,7 @@ export const TestimonialsSection: React.FC = () => {
   const current = TESTIMONIALS[currentIndex];
 
   return (
-    <section className="py-20 lg:py-28 relative bg-[#070C16] border-t border-slate-800/80">
+    <section className="py-20 lg:py-28 relative bg-white border-t border-slate-200/80">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
@@ -26,20 +26,20 @@ export const TestimonialsSection: React.FC = () => {
             <span>Client Perspectives</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             Client Feedback &{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-300">
               Partnership Experiences
             </span>
           </h2>
 
-          <p className="text-base text-slate-300">
+          <p className="text-base text-slate-700">
             Read representative feedback and preview perspectives on our software delivery and communication.
           </p>
         </div>
 
         {/* Carousel Card Container */}
-        <div className="relative rounded-3xl bg-slate-900/90 border border-slate-800 p-8 sm:p-12 shadow-2xl backdrop-blur-xl">
+        <div className="relative rounded-3xl bg-slate-100/90 border border-slate-200 p-8 sm:p-12 shadow-2xl backdrop-blur-xl">
           
           <div className="absolute top-8 right-8 text-blue-500/20">
             <Quote className="w-16 h-16 sm:w-20 sm:h-20" />
@@ -55,20 +55,20 @@ export const TestimonialsSection: React.FC = () => {
             </div>
 
             {/* Quote */}
-            <p className="text-lg sm:text-xl lg:text-2xl text-slate-100 font-medium leading-relaxed italic">
+            <p className="text-lg sm:text-xl lg:text-2xl text-slate-900 font-medium leading-relaxed italic">
               "{current.quote}"
             </p>
 
             {/* Author Info */}
-            <div className="pt-4 border-t border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="pt-4 border-t border-slate-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center text-white font-bold text-base shadow-md">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center text-slate-900 font-bold text-base shadow-md">
                   {current.name.charAt(0)}
                 </div>
                 <div>
-                  <h4 className="text-base font-bold text-white">{current.name}</h4>
+                  <h4 className="text-base font-bold text-slate-900">{current.name}</h4>
                   <p className="text-xs text-cyan-400">{current.role}</p>
-                  <p className="text-xs text-slate-400">{current.company}</p>
+                  <p className="text-xs text-slate-500">{current.company}</p>
                 </div>
               </div>
 
@@ -77,17 +77,17 @@ export const TestimonialsSection: React.FC = () => {
                 <button
                   onClick={prev}
                   aria-label="Previous testimonial"
-                  className="p-3 rounded-xl bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 border border-slate-700 transition-colors"
+                  className="p-3 rounded-xl bg-slate-200 text-slate-700 hover:text-slate-900 hover:bg-slate-700 border border-slate-300 transition-colors"
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
-                <div className="text-xs font-mono text-slate-400 px-2">
+                <div className="text-xs font-mono text-slate-500 px-2">
                   {currentIndex + 1} / {TESTIMONIALS.length}
                 </div>
                 <button
                   onClick={next}
                   aria-label="Next testimonial"
-                  className="p-3 rounded-xl bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 border border-slate-700 transition-colors"
+                  className="p-3 rounded-xl bg-slate-200 text-slate-700 hover:text-slate-900 hover:bg-slate-700 border border-slate-300 transition-colors"
                 >
                   <ChevronRight className="w-5 h-5" />
                 </button>
@@ -99,8 +99,8 @@ export const TestimonialsSection: React.FC = () => {
         </div>
 
         {/* Concept Notice */}
-        <div className="mt-8 p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 text-center max-w-xl mx-auto">
-          <p className="text-xs text-slate-400 flex items-center justify-center gap-2">
+        <div className="mt-8 p-3.5 rounded-xl bg-slate-100/60 border border-slate-200 text-center max-w-xl mx-auto">
+          <p className="text-xs text-slate-500 flex items-center justify-center gap-2">
             <ShieldAlert className="w-4 h-4 text-cyan-400 flex-shrink-0" />
             <span>Sample content shown for UI preview. Replace with client verified case studies upon contract approval.</span>
           </p>

@@ -9,15 +9,15 @@ export default {
     extend: {
       colors: {
         brand: {
-          dark: '#0B1220',
-          darker: '#060B14',
-          card: '#111D32',
-          border: '#1E293B',
+          dark: '#f8fafc',
+          darker: '#f1f5f9',
+          card: '#ffffff',
+          border: '#e2e8f0',
           blue: '#2563EB',
           cyan: '#06B6D4',
           accent: '#38BDF8',
-          muted: '#94A3B8',
-          light: '#F8FAFC'
+          muted: '#64748B',
+          light: '#0F172A'
         }
       },
       fontFamily: {

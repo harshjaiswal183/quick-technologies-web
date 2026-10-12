@@ -55,8 +55,8 @@ export const COMPANY_INFO = {
     city: "New Delhi",
     state: "Delhi",
     country: "India",
-    addressPlaceholder: "Connaught Place / South Extension, New Delhi - 110001 (Office Address Placeholder - Replace upon lease confirmation)",
-    isPlaceholder: true,
+    addressPlaceholder: "F-167, Karampura, New Delhi - 110015",
+    isPlaceholder: false,
   }
 };
 

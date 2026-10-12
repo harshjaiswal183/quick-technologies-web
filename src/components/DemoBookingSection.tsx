@@ -65,45 +65,20 @@ export const DemoBookingSection: React.FC<DemoBookingSectionProps> = ({
     "Other"
   ];
 
-  // Mobile number validation logic
+  // Mobile number validation logic — simple 10-digit Indian number
   const validatePhone = (rawPhone: string): { isValid: boolean; message?: string } => {
-    const trimmed = rawPhone.trim();
-    if (!trimmed) {
+    const digits = rawPhone.trim().replace(/\D/g, '');
+
+    if (!digits) {
       return { isValid: false, message: "Mobile number is required" };
     }
 
-    // Extract raw digits
-    let digits = trimmed.replace(/\D/g, "");
-
-    // Handle +91 or leading 0 prefix
-    if (digits.length === 12 && digits.startsWith("91")) {
-      digits = digits.slice(2);
-    } else if (digits.length === 11 && digits.startsWith("0")) {
-      digits = digits.slice(1);
+    if (digits.length !== 10) {
+      return { isValid: false, message: `Enter exactly 10 digits (currently ${digits.length})` };
     }
 
-    // Check for repetitive fake numbers (e.g., 0000000000, 9999999999)
-    if (/^(\d)\1{9,}$/.test(digits)) {
-      return { isValid: false, message: "Please enter a genuine 10-digit mobile number" };
-    }
-
-    // Check for sequential fake numbers
-    if (digits === "1234567890" || digits === "0123456789" || digits === "9876543210") {
-      // 9876543210 can sometimes be a real test number, but standard valid format check applies:
-    }
-
-    // Check length
-    if (digits.length < 10) {
-      return { isValid: false, message: `Please enter 10 digits (currently ${digits.length})` };
-    }
-
-    if (digits.length > 15) {
-      return { isValid: false, message: "Mobile number cannot exceed 15 digits" };
-    }
-
-    // For standard 10-digit Indian numbers, verify telecom starting digit (6, 7, 8, or 9)
-    if (digits.length === 10 && !/^[6-9]/.test(digits)) {
-      return { isValid: false, message: "Mobile number must start with 6, 7, 8, or 9" };
+    if (!/^[6-9]/.test(digits)) {
+      return { isValid: false, message: "Number must start with 6, 7, 8, or 9" };
     }
 
     return { isValid: true };
@@ -250,7 +225,7 @@ export const DemoBookingSection: React.FC<DemoBookingSectionProps> = ({
   };
 
   return (
-    <section id="book-demo" className="py-20 lg:py-28 relative bg-[#090F1C] border-t border-slate-800/80">
+    <section id="book-demo" className="py-20 lg:py-28 relative bg-slate-50 border-t border-slate-200/80">
       {/* Background Lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-blue-600/10 blur-[150px] pointer-events-none rounded-full" />
 
@@ -263,20 +238,20 @@ export const DemoBookingSection: React.FC<DemoBookingSectionProps> = ({
             <span>Interactive Demo & Consultation</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             Let's Discuss Your{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-300">
               Business Requirements
             </span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
             Schedule a personalized, zero-obligation technical walkthrough with our software architects. We will demonstrate live systems tailored to your industry workflows.
           </p>
         </div>
 
         {/* Main Form Card Container */}
-        <div className="rounded-2xl bg-[#0F172A] border border-slate-800 p-6 sm:p-10 shadow-2xl relative overflow-hidden backdrop-blur-xl">
+        <div className="rounded-2xl bg-white border border-slate-200 p-6 sm:p-10 shadow-2xl relative overflow-hidden backdrop-blur-xl">
           
           {/* Success State */}
           {isSubmitted && submittedData ? (
@@ -286,19 +261,19 @@ export const DemoBookingSection: React.FC<DemoBookingSectionProps> = ({
               </div>
 
               <div className="space-y-2">
-                <h3 className="text-2xl font-bold text-white">Demo Request Recorded Successfully!</h3>
-                <p className="text-sm text-slate-300 max-w-md mx-auto">
-                  Thank you, <strong className="text-cyan-400">{submittedData.fullName}</strong>. Our engineering team at Quick Technologies will reach out via <strong className="text-white">{submittedData.contactMethod}</strong> shortly.
+                <h3 className="text-2xl font-bold text-slate-900">Demo Request Recorded Successfully!</h3>
+                <p className="text-sm text-slate-700 max-w-md mx-auto">
+                  Thank you, <strong className="text-cyan-400">{submittedData.fullName}</strong>. Our engineering team at Quick Technologies will reach out via <strong className="text-slate-900">{submittedData.contactMethod}</strong> shortly.
                 </p>
               </div>
 
               {/* Request Status Confirmation */}
-              <div className="p-4 rounded-xl bg-slate-900/90 border border-emerald-500/30 text-xs text-slate-300 max-w-lg mx-auto text-center space-y-1">
+              <div className="p-4 rounded-xl bg-slate-100/90 border border-emerald-500/30 text-xs text-slate-700 max-w-lg mx-auto text-center space-y-1">
                 <div className="flex items-center justify-center gap-2 text-emerald-400 font-semibold">
                   <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
                   <span>Request Received & Confirmed</span>
                 </div>
-                <p className="text-slate-400 text-[11px]">
+                <p className="text-slate-500 text-[11px]">
                   Our software consultants have received your details and will connect with you shortly.
                 </p>
               </div>
@@ -322,7 +297,7 @@ export const DemoBookingSection: React.FC<DemoBookingSectionProps> = ({
 
                 <button
                   onClick={handleReset}
-                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white border border-slate-700 font-medium text-sm transition-all"
+                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-slate-200 text-slate-700 hover:text-slate-900 border border-slate-300 font-medium text-sm transition-all"
                 >
                   Submit Another Inquiry
                 </button>
@@ -336,7 +311,7 @@ export const DemoBookingSection: React.FC<DemoBookingSectionProps> = ({
                 
                 {/* Full Name */}
                 <div className="space-y-1.5">
-                  <label htmlFor="fullName" className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
+                  <label htmlFor="fullName" className="text-xs font-semibold text-slate-700 flex items-center gap-1.5">
                     <User className="w-3.5 h-3.5 text-cyan-400" />
                     <span>Full Name <span className="text-rose-400">*</span></span>
                   </label>
@@ -349,8 +324,8 @@ export const DemoBookingSection: React.FC<DemoBookingSectionProps> = ({
                       if (errors.fullName) setErrors({ ...errors, fullName: '' });
                     }}
                     placeholder="e.g. Rahul Sharma"
-                    className={`w-full px-4 py-3 rounded-xl bg-slate-900 border text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ${
-                      errors.fullName ? 'border-rose-500/80 bg-rose-500/5' : 'border-slate-800 focus:border-blue-500'
+                    className={`w-full px-4 py-3 rounded-xl bg-slate-100 border text-sm text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ${
+                      errors.fullName ? 'border-rose-500/80 bg-rose-500/5' : 'border-slate-200 focus:border-blue-500'
                     }`}
                   />
                   {errors.fullName && (
@@ -362,7 +337,7 @@ export const DemoBookingSection: React.FC<DemoBookingSectionProps> = ({
 
                 {/* Company Name */}
                 <div className="space-y-1.5">
-                  <label htmlFor="companyName" className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
+                  <label htmlFor="companyName" className="text-xs font-semibold text-slate-700 flex items-center gap-1.5">
                     <Building className="w-3.5 h-3.5 text-blue-400" />
                     <span>Company / Business Name</span>
                   </label>
@@ -372,20 +347,22 @@ export const DemoBookingSection: React.FC<DemoBookingSectionProps> = ({
                     value={formData.companyName}
                     onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
                     placeholder="e.g. Apex Distribution LLP"
-                    className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-100 border border-slate-200 text-sm text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
                   />
                 </div>
 
                 {/* Phone Number with Enhanced Logic */}
                 <div className="space-y-1.5">
                   <div className="flex items-center justify-between">
-                    <label htmlFor="phone" className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
+                    <label htmlFor="phone" className="text-xs font-semibold text-slate-700 flex items-center gap-1.5">
                       <Phone className="w-3.5 h-3.5 text-emerald-400" />
                       <span>Phone / WhatsApp Number <span className="text-rose-400">*</span></span>
                     </label>
                     {formData.phone && (
-                      <span className="text-[10px] text-slate-400 font-mono">
-                        {formData.phone.replace(/\D/g, '').length} digits
+                      <span className={`text-[10px] font-mono ${
+                        formData.phone.length === 10 ? 'text-emerald-400' : 'text-slate-500'
+                      }`}>
+                        {formData.phone.length}/10
                       </span>
                     )}
                   </div>
@@ -394,12 +371,13 @@ export const DemoBookingSection: React.FC<DemoBookingSectionProps> = ({
                       id="phone"
                       type="tel"
                       value={formData.phone}
+                      maxLength={10}
                       onChange={(e) => {
-                        // Logic: Only allow digits, plus sign, spaces, and hyphens
-                        const filtered = e.target.value.replace(/[^0-9+\s-]/g, '');
-                        setFormData({ ...formData, phone: filtered });
+                        // Only allow digits, max 10
+                        const digits = e.target.value.replace(/\D/g, '').slice(0, 10);
+                        setFormData({ ...formData, phone: digits });
                         if (errors.phone) {
-                          const check = validatePhone(filtered);
+                          const check = validatePhone(digits);
                           if (check.isValid) setErrors({ ...errors, phone: '' });
                         }
                       }}
@@ -411,13 +389,13 @@ export const DemoBookingSection: React.FC<DemoBookingSectionProps> = ({
                           }
                         }
                       }}
-                      placeholder="e.g. 9876543210 or +91 98765 43210"
-                      className={`w-full px-4 py-3 pr-10 rounded-xl bg-slate-900 border text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ${
+                      placeholder="e.g. 9876543210"
+                      className={`w-full px-4 py-3 pr-10 rounded-xl bg-slate-100 border text-sm text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ${
                         errors.phone 
                           ? 'border-rose-500/80 bg-rose-500/5' 
                           : validatePhone(formData.phone).isValid
                           ? 'border-emerald-500/80 focus:border-emerald-500'
-                          : 'border-slate-800 focus:border-blue-500'
+                          : 'border-slate-200 focus:border-blue-500'
                       }`}
                     />
                     {validatePhone(formData.phone).isValid && (
@@ -432,7 +410,7 @@ export const DemoBookingSection: React.FC<DemoBookingSectionProps> = ({
                     </span>
                   ) : (
                     <span className="text-[10px] text-slate-500 block">
-                      10-digit Indian number or international with country code
+                      10-digit Indian mobile number (starts with 6, 7, 8 or 9)
                     </span>
                   )}
                 </div>
@@ -440,7 +418,7 @@ export const DemoBookingSection: React.FC<DemoBookingSectionProps> = ({
                 {/* Email Address with Enhanced Logic */}
                 <div className="space-y-1.5">
                   <div className="flex items-center justify-between">
-                    <label htmlFor="email" className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
+                    <label htmlFor="email" className="text-xs font-semibold text-slate-700 flex items-center gap-1.5">
                       <Mail className="w-3.5 h-3.5 text-sky-400" />
                       <span>Email Address <span className="text-rose-400">*</span></span>
                     </label>
@@ -470,12 +448,12 @@ export const DemoBookingSection: React.FC<DemoBookingSectionProps> = ({
                         }
                       }}
                       placeholder="e.g. rahul@company.com"
-                      className={`w-full px-4 py-3 pr-10 rounded-xl bg-slate-900 border text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ${
+                      className={`w-full px-4 py-3 pr-10 rounded-xl bg-slate-100 border text-sm text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ${
                         errors.email 
                           ? 'border-rose-500/80 bg-rose-500/5' 
                           : validateEmail(formData.email).isValid
                           ? 'border-emerald-500/80 focus:border-emerald-500'
-                          : 'border-slate-800 focus:border-blue-500'
+                          : 'border-slate-200 focus:border-blue-500'
                       }`}
                     />
                     {validateEmail(formData.email).isValid && (
@@ -498,7 +476,7 @@ export const DemoBookingSection: React.FC<DemoBookingSectionProps> = ({
 
                 {/* Select Service Dropdown */}
                 <div className="space-y-1.5">
-                  <label htmlFor="service" className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
+                  <label htmlFor="service" className="text-xs font-semibold text-slate-700 flex items-center gap-1.5">
                     <HelpCircle className="w-3.5 h-3.5 text-purple-400" />
                     <span>Select Service <span className="text-rose-400">*</span></span>
                   </label>
@@ -506,10 +484,10 @@ export const DemoBookingSection: React.FC<DemoBookingSectionProps> = ({
                     id="service"
                     value={formData.service}
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-100 border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
                   >
                     {serviceOptions.map((svc) => (
-                      <option key={svc} value={svc} className="bg-slate-900 text-white">
+                      <option key={svc} value={svc} className="bg-slate-100 text-slate-900">
                         {svc}
                       </option>
                     ))}
@@ -518,7 +496,7 @@ export const DemoBookingSection: React.FC<DemoBookingSectionProps> = ({
 
                 {/* Preferred Contact Method */}
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-slate-300 block">
+                  <label className="text-xs font-semibold text-slate-700 block">
                     Preferred Contact Method
                   </label>
                   <div className="grid grid-cols-3 gap-2">
@@ -529,8 +507,8 @@ export const DemoBookingSection: React.FC<DemoBookingSectionProps> = ({
                         onClick={() => setFormData({ ...formData, contactMethod: method })}
                         className={`py-3 px-2 rounded-xl text-xs font-medium border text-center transition-all ${
                           formData.contactMethod === method
-                            ? 'bg-blue-600/20 border-blue-500 text-cyan-300 font-semibold'
-                            : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white'
+                            ? 'bg-blue-600/20 border-blue-500 text-blue-700 font-semibold'
+                            : 'bg-slate-100 border-slate-200 text-slate-500 hover:text-slate-900'
                         }`}
                       >
                         {method}
@@ -543,7 +521,7 @@ export const DemoBookingSection: React.FC<DemoBookingSectionProps> = ({
 
               {/* Brief Project Requirements */}
               <div className="space-y-1.5">
-                <label htmlFor="requirements" className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
+                <label htmlFor="requirements" className="text-xs font-semibold text-slate-700 flex items-center gap-1.5">
                   <FileText className="w-3.5 h-3.5 text-amber-400" />
                   <span>Brief Project Requirements / Problem Statement</span>
                 </label>
@@ -553,7 +531,7 @@ export const DemoBookingSection: React.FC<DemoBookingSectionProps> = ({
                   value={formData.requirements}
                   onChange={(e) => setFormData({ ...formData, requirements: e.target.value })}
                   placeholder="Tell us about your team size, current software bottlenecks, and timeline goals..."
-                  className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all resize-y"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-100 border border-slate-200 text-sm text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all resize-y"
                 />
               </div>
 
@@ -584,7 +562,7 @@ export const DemoBookingSection: React.FC<DemoBookingSectionProps> = ({
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-emerald-600/20 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-600/30 font-semibold text-sm transition-all"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-emerald-600/10 text-emerald-700 border border-emerald-500/40 hover:bg-emerald-600/20 font-semibold text-sm transition-all"
                 >
                   <WhatsAppIcon className="w-4 h-4 text-emerald-400" />
                   <span>Or Chat on WhatsApp Directly</span>

@@ -58,11 +58,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemoModal }) => {
               <Sparkles className="w-4 h-4 text-cyan-400 animate-pulse" />
               <span>Your Technology Growth Partner</span>
               <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-              <span className="text-slate-400 font-normal">India</span>
+              <span className="text-slate-500 font-normal">India</span>
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-3xl sm:text-5xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
+            <h1 className="text-3xl sm:text-5xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
               We Build{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-300">
                 Smart Software Solutions
@@ -71,7 +71,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemoModal }) => {
             </h1>
 
             {/* Supporting Description */}
-            <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+            <p className="text-base sm:text-lg text-slate-700 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
               From custom web and mobile applications to sales automation, loyalty programs, ERP, CRM and digital marketing, we help businesses streamline operations and accelerate growth.
             </p>
 
@@ -93,7 +93,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemoModal }) => {
 
               <button
                 onClick={() => scrollToSection('services')}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-slate-200 hover:text-white font-medium text-sm sm:text-base border border-slate-700/80 transition-all hover:border-slate-600"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium text-sm sm:text-base border border-slate-700 transition-all"
               >
                 <span>Explore Our Services</span>
               </button>
@@ -112,28 +112,28 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemoModal }) => {
 
 
             {/* Trust Indicators */}
-            <div className="pt-4 border-t border-slate-800/80 grid grid-cols-3 gap-2 sm:gap-4 max-w-lg mx-auto lg:mx-0">
+            <div className="pt-4 border-t border-slate-200/80 grid grid-cols-3 gap-2 sm:gap-4 max-w-lg mx-auto lg:mx-0">
               <div className="text-center lg:text-left">
-                <div className="text-xl sm:text-2xl font-bold text-white flex items-center justify-center lg:justify-start gap-1">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-400 flex items-center justify-center lg:justify-start gap-1.5">
                   <span>{COMPANY_INFO.experienceYears}</span>
-                  <span className="text-cyan-400 text-sm font-semibold">Years</span>
+                  <span className="text-cyan-500 text-lg font-extrabold">Years</span>
                 </div>
-                <div className="text-xs text-slate-400 font-medium mt-0.5">Industry Experience</div>
+                <div className="text-xs text-slate-600 font-medium mt-0.5">Industry Experience</div>
               </div>
 
-              <div className="text-center lg:text-left border-x border-slate-800/80 px-2 sm:px-4">
-                <div className="text-xl sm:text-2xl font-bold text-white flex items-center justify-center lg:justify-start gap-1">
+              <div className="text-center lg:text-left border-x border-slate-200/80 px-2 sm:px-4">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-400 flex items-center justify-center lg:justify-start gap-1.5">
                   <span>{COMPANY_INFO.clientsCount}</span>
-                  <span className="text-cyan-400 text-sm font-semibold">Clients</span>
+                  <span className="text-cyan-500 text-lg font-extrabold">Clients</span>
                 </div>
-                <div className="text-xs text-slate-400 font-medium mt-0.5">Growing Network</div>
+                <div className="text-xs text-slate-600 font-medium mt-0.5">Growing Network</div>
               </div>
 
               <div className="text-center lg:text-left">
-                <div className="text-xl sm:text-2xl font-bold text-white flex items-center justify-center lg:justify-start gap-1">
+                <div className="text-xl sm:text-2xl font-bold text-slate-900 flex items-center justify-center lg:justify-start gap-1">
                   <span className="text-emerald-400">100%</span>
                 </div>
-                <div className="text-xs text-slate-400 font-medium mt-0.5">Custom-Built Solutions</div>
+                <div className="text-xs text-slate-500 font-medium mt-0.5">Custom-Built Solutions</div>
               </div>
             </div>
 
@@ -146,15 +146,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemoModal }) => {
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-600/30 to-cyan-500/30 rounded-3xl blur-2xl opacity-75 group-hover:opacity-100 transition duration-1000 -z-10" />
 
             {/* Dashboard Container */}
-            <div className="relative rounded-2xl bg-[#0F172A]/90 border border-slate-800/90 shadow-2xl overflow-hidden backdrop-blur-xl">
+            <div className="relative rounded-2xl bg-white/90 border border-slate-200/90 shadow-2xl overflow-hidden backdrop-blur-xl">
               
               {/* Window Header */}
-              <div className="px-4 py-3 bg-[#0B1220] border-b border-slate-800 flex items-center justify-between">
+              <div className="px-4 py-3 bg-white border-b border-slate-200 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-rose-500/80" />
                   <div className="w-3 h-3 rounded-full bg-amber-500/80" />
                   <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                  <span className="text-xs text-slate-400 font-mono ml-2 hidden sm:inline">
+                  <span className="text-xs text-slate-500 font-mono ml-2 hidden sm:inline">
                     quicktech-cloud-suite.v2.4
                   </span>
                 </div>
@@ -167,13 +167,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemoModal }) => {
               </div>
 
               {/* Mini Module Navigation Pills */}
-              <div className="p-3 bg-slate-900/60 border-b border-slate-800/80 flex items-center gap-1.5 overflow-x-auto text-xs no-scrollbar">
+              <div className="p-3 bg-slate-100/60 border-b border-slate-200/80 flex items-center gap-1.5 overflow-x-auto text-xs no-scrollbar">
                 <button
                   onClick={() => setActiveTab('sales')}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all ${
                     activeTab === 'sales'
                       ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30'
-                      : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
                   }`}
                 >
                   <TrendingUp className="w-3.5 h-3.5" />
@@ -185,7 +185,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemoModal }) => {
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all ${
                     activeTab === 'orders'
                       ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30'
-                      : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
                   }`}
                 >
                   <ShoppingCart className="w-3.5 h-3.5" />
@@ -197,7 +197,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemoModal }) => {
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all ${
                     activeTab === 'loyalty'
                       ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30'
-                      : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
                   }`}
                 >
                   <Award className="w-3.5 h-3.5" />
@@ -209,7 +209,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemoModal }) => {
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all ${
                     activeTab === 'gps'
                       ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30'
-                      : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
                   }`}
                 >
                   <MapPin className="w-3.5 h-3.5" />
@@ -222,33 +222,33 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemoModal }) => {
                 
                 {/* Metric Summary Top Strip */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-                  <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                    <div className="text-[11px] text-slate-400 font-medium">Monthly Revenue</div>
-                    <div className="text-base sm:text-lg font-bold text-white mt-0.5">₹14.82 Lakh</div>
+                  <div className="p-3 rounded-xl bg-slate-100/80 border border-slate-200">
+                    <div className="text-[11px] text-slate-500 font-medium">Monthly Revenue</div>
+                    <div className="text-base sm:text-lg font-bold text-slate-900 mt-0.5">₹14.82 Lakh</div>
                     <div className="text-[10px] text-emerald-400 flex items-center gap-0.5 mt-0.5">
                       <TrendingUp className="w-2.5 h-2.5" /> +18.4% MoM
                     </div>
                   </div>
 
-                  <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                    <div className="text-[11px] text-slate-400 font-medium">Active Outlets</div>
-                    <div className="text-base sm:text-lg font-bold text-white mt-0.5">1,248</div>
+                  <div className="p-3 rounded-xl bg-slate-100/80 border border-slate-200">
+                    <div className="text-[11px] text-slate-500 font-medium">Active Outlets</div>
+                    <div className="text-base sm:text-lg font-bold text-slate-900 mt-0.5">1,248</div>
                     <div className="text-[10px] text-emerald-400 flex items-center gap-0.5 mt-0.5">
                       <Users className="w-2.5 h-2.5" /> 98.2% Active
                     </div>
                   </div>
 
-                  <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                    <div className="text-[11px] text-slate-400 font-medium">Field Executives</div>
-                    <div className="text-base sm:text-lg font-bold text-white mt-0.5">34 On Duty</div>
+                  <div className="p-3 rounded-xl bg-slate-100/80 border border-slate-200">
+                    <div className="text-[11px] text-slate-500 font-medium">Field Executives</div>
+                    <div className="text-base sm:text-lg font-bold text-slate-900 mt-0.5">34 On Duty</div>
                     <div className="text-[10px] text-cyan-400 flex items-center gap-0.5 mt-0.5">
                       <Activity className="w-2.5 h-2.5" /> 100% Geofenced
                     </div>
                   </div>
 
-                  <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                    <div className="text-[11px] text-slate-400 font-medium">Orders Today</div>
-                    <div className="text-base sm:text-lg font-bold text-white mt-0.5">286 Pcs</div>
+                  <div className="p-3 rounded-xl bg-slate-100/80 border border-slate-200">
+                    <div className="text-[11px] text-slate-500 font-medium">Orders Today</div>
+                    <div className="text-base sm:text-lg font-bold text-slate-900 mt-0.5">286 Pcs</div>
                     <div className="text-[10px] text-blue-400 flex items-center gap-0.5 mt-0.5">
                       <Zap className="w-2.5 h-2.5" /> Dispatching
                     </div>
@@ -257,11 +257,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemoModal }) => {
 
                 {/* Dynamic Screen Visual Based on Active Tab */}
                 {activeTab === 'sales' && (
-                  <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800/90 space-y-3">
+                  <div className="p-4 rounded-xl bg-slate-100/90 border border-slate-200/90 space-y-3">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <BarChart3 className="w-4 h-4 text-blue-400" />
-                        <span className="text-xs font-semibold text-white">Sales Force Beat Execution & Target Velocity</span>
+                        <span className="text-xs font-semibold text-slate-900">Sales Force Beat Execution & Target Velocity</span>
                       </div>
                       <span className="text-[11px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20">
                         88% Target Achieved
@@ -269,7 +269,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemoModal }) => {
                     </div>
 
                     {/* Simulated Interactive Bar Graph */}
-                    <div className="h-28 flex items-end justify-between gap-2 pt-4 px-1 border-b border-slate-800">
+                    <div className="h-28 flex items-end justify-between gap-2 pt-4 px-1 border-b border-slate-200">
                       {[
                         { day: 'Mon', h: '60%', val: '₹1.8L' },
                         { day: 'Tue', h: '82%', val: '₹2.4L' },
@@ -279,32 +279,32 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemoModal }) => {
                         { day: 'Sat', h: '68%', val: '₹2.0L' },
                       ].map((bar, i) => (
                         <div key={i} className="flex-1 flex flex-col items-center gap-1 group">
-                          <span className="text-[9px] font-mono text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <span className="text-[9px] font-mono text-slate-500 opacity-0 group-hover:opacity-100 transition-opacity">
                             {bar.val}
                           </span>
                           <div
                             style={{ height: bar.h }}
                             className="w-full rounded-t-md bg-gradient-to-t from-blue-600 to-cyan-400 group-hover:from-blue-500 group-hover:to-cyan-300 transition-all duration-300"
                           />
-                          <span className="text-[10px] text-slate-400">{bar.day}</span>
+                          <span className="text-[10px] text-slate-500">{bar.day}</span>
                         </div>
                       ))}
                     </div>
 
-                    <div className="flex items-center justify-between text-[11px] text-slate-400 pt-1">
+                    <div className="flex items-center justify-between text-[11px] text-slate-500 pt-1">
                       <div className="flex items-center gap-1.5">
                         <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                         <span>Real-time Retailer GPS Check-ins Verified</span>
                       </div>
-                      <span className="text-slate-300 font-mono">312 Outlets Visited Today</span>
+                      <span className="text-slate-700 font-mono">312 Outlets Visited Today</span>
                     </div>
                   </div>
                 )}
 
                 {activeTab === 'orders' && (
-                  <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800/90 space-y-2.5">
+                  <div className="p-4 rounded-xl bg-slate-100/90 border border-slate-200/90 space-y-2.5">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-semibold text-white">Live Distributor Order Stream</span>
+                      <span className="text-xs font-semibold text-slate-900">Live Distributor Order Stream</span>
                       <span className="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
                         Auto-Routing Active
                       </span>
@@ -315,14 +315,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemoModal }) => {
                         { id: 'ORD-8940', dealer: 'Apex Distribution Hub', amount: '₹1,42,000', status: 'Packing', time: '8m ago' },
                         { id: 'ORD-8939', dealer: 'Kalyan Enterprises', amount: '₹36,500', status: 'Approved', time: '14m ago' },
                       ].map((ord, idx) => (
-                        <div key={idx} className="flex items-center justify-between p-2 rounded-lg bg-slate-800/60 border border-slate-700/60 text-xs">
+                        <div key={idx} className="flex items-center justify-between p-2 rounded-lg bg-slate-200/60 border border-slate-300/60 text-xs">
                           <div>
-                            <div className="font-semibold text-slate-200">{ord.dealer}</div>
-                            <div className="text-[10px] text-slate-400 font-mono">{ord.id} • {ord.time}</div>
+                            <div className="font-semibold text-slate-900">{ord.dealer}</div>
+                            <div className="text-[10px] text-slate-500 font-mono">{ord.id} • {ord.time}</div>
                           </div>
                           <div className="text-right">
-                            <div className="font-bold text-white">{ord.amount}</div>
-                            <span className="text-[10px] px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30">
+                            <div className="font-bold text-slate-900">{ord.amount}</div>
+                            <span className="text-[10px] px-1.5 py-0.5 rounded bg-blue-600/20 text-blue-700 border border-blue-500/30">
                               {ord.status}
                             </span>
                           </div>
@@ -333,26 +333,26 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemoModal }) => {
                 )}
 
                 {activeTab === 'loyalty' && (
-                  <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800/90 space-y-3">
+                  <div className="p-4 rounded-xl bg-slate-100/90 border border-slate-200/90 space-y-3">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-semibold text-white">Retailer QR Rewards & Scan Engine</span>
+                      <span className="text-xs font-semibold text-slate-900">Retailer QR Rewards & Scan Engine</span>
                       <span className="text-[10px] text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded border border-purple-500/20">
                         Instant UPI Payouts
                       </span>
                     </div>
                     <div className="grid grid-cols-2 gap-2 text-xs">
-                      <div className="p-2.5 rounded-lg bg-slate-800/60 border border-slate-700/60">
-                        <div className="text-slate-400 text-[10px]">Points Scanned Today</div>
+                      <div className="p-2.5 rounded-lg bg-slate-200/60 border border-slate-300/60">
+                        <div className="text-slate-500 text-[10px]">Points Scanned Today</div>
                         <div className="text-lg font-bold text-cyan-400">48,250 pts</div>
-                        <div className="text-[10px] text-slate-400">+312 unique retailers</div>
+                        <div className="text-[10px] text-slate-500">+312 unique retailers</div>
                       </div>
-                      <div className="p-2.5 rounded-lg bg-slate-800/60 border border-slate-700/60">
-                        <div className="text-slate-400 text-[10px]">Cashback Redeemed</div>
+                      <div className="p-2.5 rounded-lg bg-slate-200/60 border border-slate-300/60">
+                        <div className="text-slate-500 text-[10px]">Cashback Redeemed</div>
                         <div className="text-lg font-bold text-emerald-400">₹24,125</div>
-                        <div className="text-[10px] text-slate-400">Zero fraud scan rate</div>
+                        <div className="text-[10px] text-slate-500">Zero fraud scan rate</div>
                       </div>
                     </div>
-                    <div className="p-2 rounded-lg bg-blue-950/40 border border-blue-800/40 text-[11px] text-slate-300 flex items-center gap-2">
+                    <div className="p-2 rounded-lg bg-blue-50 border border-blue-200 text-[11px] text-slate-700 flex items-center gap-2">
                       <Award className="w-4 h-4 text-cyan-400 flex-shrink-0" />
                       <span>Encrypted QR codes prevent counterfeit products & drive repeat sales.</span>
                     </div>
@@ -360,15 +360,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemoModal }) => {
                 )}
 
                 {activeTab === 'gps' && (
-                  <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800/90 space-y-3">
+                  <div className="p-4 rounded-xl bg-slate-100/90 border border-slate-200/90 space-y-3">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-semibold text-white">Field Rep Telematics & Route Monitoring</span>
+                      <span className="text-xs font-semibold text-slate-900">Field Rep Telematics & Route Monitoring</span>
                       <span className="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
                         Live 5s GPS Ping
                       </span>
                     </div>
                     {/* Simulated Map View */}
-                    <div className="h-28 rounded-lg bg-slate-950/90 border border-slate-800 relative overflow-hidden flex items-center justify-center">
+                    <div className="h-28 rounded-lg bg-slate-800 border border-slate-600 relative overflow-hidden flex items-center justify-center">
                       <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px]" />
                       <div className="relative z-10 flex items-center gap-3">
                         <div className="p-2 rounded-full bg-cyan-500/20 border border-cyan-400 text-cyan-400 animate-bounce">
@@ -376,11 +376,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemoModal }) => {
                         </div>
                         <div className="text-left">
                           <div className="text-xs font-bold text-white">Route: Delhi Central Beat #4</div>
-                          <div className="text-[10px] text-slate-400">14 Outlets Visited • 18.4 km Logged</div>
+                          <div className="text-[10px] text-slate-500">14 Outlets Visited • 18.4 km Logged</div>
                         </div>
                       </div>
                     </div>
-                    <div className="flex items-center justify-between text-[11px] text-slate-400">
+                    <div className="flex items-center justify-between text-[11px] text-slate-500">
                       <span>Battery Optimization: Level 3 Active</span>
                       <span className="text-emerald-400">Geofence accuracy: ±4 meters</span>
                     </div>
@@ -390,13 +390,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemoModal }) => {
               </div>
 
               {/* Bottom Subtle Status Bar */}
-              <div className="px-4 py-2.5 bg-slate-950/80 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-400">
+              <div className="px-4 py-2.5 bg-slate-800 border-t border-slate-600 flex items-center justify-between text-[11px] text-slate-300">
                 <div className="flex items-center gap-1.5">
                   <ShieldCheck className="w-3.5 h-3.5 text-blue-400" />
                   <span>ISO 27001 Security Standards</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-slate-500">Architecture:</span>
+                  <span className="text-slate-400">Architecture:</span>
                   <span className="text-cyan-400 font-mono font-medium">Modular SaaS Engine</span>
                 </div>
               </div>
@@ -404,23 +404,23 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemoModal }) => {
             </div>
 
             {/* Floating Quick Badges */}
-            <div className="hidden sm:flex absolute -bottom-5 -left-5 p-3 rounded-xl bg-[#0B1220]/95 border border-blue-500/30 shadow-xl backdrop-blur-md items-center gap-2.5 animate-float-slow">
+            <div className="hidden sm:flex absolute -bottom-5 -left-5 p-3 rounded-xl bg-white/95 border border-blue-500/30 shadow-xl backdrop-blur-md items-center gap-2.5 animate-float-slow">
               <div className="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">
                 <Layers className="w-4 h-4" />
               </div>
               <div className="text-left">
-                <div className="text-xs font-bold text-white">Fullstack Delivery</div>
-                <div className="text-[10px] text-slate-400">Web, Mobile & Automation</div>
+                <div className="text-xs font-bold text-slate-900">Fullstack Delivery</div>
+                <div className="text-[10px] text-slate-500">Web, Mobile & Automation</div>
               </div>
             </div>
 
-            <div className="hidden sm:flex absolute -top-4 -right-4 p-3 rounded-xl bg-[#0B1220]/95 border border-cyan-500/30 shadow-xl backdrop-blur-md items-center gap-2.5 animate-float-delayed">
+            <div className="hidden sm:flex absolute -top-4 -right-4 p-3 rounded-xl bg-white/95 border border-cyan-500/30 shadow-xl backdrop-blur-md items-center gap-2.5 animate-float-delayed">
               <div className="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center text-cyan-400">
                 <Zap className="w-4 h-4" />
               </div>
               <div className="text-left">
-                <div className="text-xs font-bold text-white">Fast Time-to-Market</div>
-                <div className="text-[10px] text-slate-400">Agile sprints & fast releases</div>
+                <div className="text-xs font-bold text-slate-900">Fast Time-to-Market</div>
+                <div className="text-[10px] text-slate-500">Agile sprints & fast releases</div>
               </div>
             </div>
 

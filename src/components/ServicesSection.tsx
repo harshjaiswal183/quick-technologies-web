@@ -45,7 +45,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
   };
 
   return (
-    <section id="services" className="py-20 lg:py-28 relative bg-[#070C16]">
+    <section id="services" className="py-20 lg:py-28 relative bg-white">
       {/* Background Decor */}
       <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-blue-600/10 blur-[140px] pointer-events-none rounded-full" />
       <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-cyan-600/10 blur-[140px] pointer-events-none rounded-full" />
@@ -59,14 +59,14 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
             <span>Comprehensive IT & Digital Services</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             Tailor-Made Solutions for Every{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-300">
               Operational Challenge
             </span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
             From field-level mobility to corporate headquarters enterprise analytics, explore our core digital and software engineering capabilities.
           </p>
         </div>
@@ -76,26 +76,26 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
           {SERVICES.map((service) => (
             <div
               key={service.id}
-              className="group relative flex flex-col justify-between p-7 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-blue-500/40 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/15 hover:-translate-y-1"
+              className="group relative flex flex-col justify-between p-7 rounded-2xl bg-slate-100/80 border border-slate-200 hover:border-blue-500/40 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/15 hover:-translate-y-1"
             >
               <div>
                 {/* Header: Icon & Category */}
                 <div className="flex items-center justify-between mb-5">
-                  <div className="w-12 h-12 rounded-xl bg-blue-600/10 border border-blue-500/20 text-cyan-400 flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-blue-600 group-hover:to-cyan-500 group-hover:text-white group-hover:scale-105 transition-all duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-blue-600/10 border border-blue-500/20 text-cyan-400 flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-blue-600 group-hover:to-cyan-500 group-hover:text-slate-900 group-hover:scale-105 transition-all duration-300">
                     {getIcon(service.icon)}
                   </div>
-                  <span className="text-[11px] font-mono font-medium text-slate-400 bg-slate-800/80 px-2.5 py-1 rounded-full border border-slate-700/60">
+                  <span className="text-[11px] font-mono font-medium text-slate-500 bg-slate-200/80 px-2.5 py-1 rounded-full border border-slate-300/60">
                     {service.category}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-white mb-2.5 group-hover:text-cyan-300 transition-colors">
+                <h3 className="text-xl font-bold text-slate-900 mb-2.5 group-hover:text-blue-600 transition-colors">
                   {service.title}
                 </h3>
 
                 {/* Short Description */}
-                <p className="text-slate-400 text-sm leading-relaxed mb-5">
+                <p className="text-slate-500 text-sm leading-relaxed mb-5">
                   {service.shortDesc}
                 </p>
 
@@ -104,7 +104,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                   {service.tags.map((t, idx) => (
                     <span
                       key={idx}
-                      className="text-[10px] font-medium px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50"
+                      className="text-[10px] font-medium px-2 py-0.5 rounded bg-slate-200/70 text-slate-700 border border-slate-300/50"
                     >
                       {t}
                     </span>
@@ -113,10 +113,10 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
               </div>
 
               {/* Card Footer Actions */}
-              <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between gap-2">
+              <div className="pt-4 border-t border-slate-200/80 flex items-center justify-between gap-2">
                 <button
                   onClick={() => setSelectedService(service)}
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors group/btn"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-600 hover:text-cyan-500 transition-colors group/btn"
                 >
                   <span>Learn More</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
@@ -145,7 +145,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                         el.scrollIntoView({ behavior: 'smooth' });
                       }
                     }}
-                    className="text-xs px-2.5 py-1.5 rounded-lg bg-blue-600/20 hover:bg-blue-600 text-blue-300 hover:text-white border border-blue-500/30 transition-all font-medium"
+                    className="text-xs px-2.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white border border-blue-400 transition-all font-medium"
                   >
                     Demo
                   </button>
@@ -155,34 +155,17 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
           ))}
         </div>
 
-        {/* Bottom Banner */}
-        <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-blue-900/40 via-slate-900 to-cyan-900/30 border border-blue-500/30 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-1 text-center md:text-left">
-            <h4 className="text-lg font-bold text-white">Need a specific software feature or legacy integration?</h4>
-            <p className="text-sm text-slate-300">We specialize in custom enterprise architectures that connect to your existing databases and hardware.</p>
-          </div>
-          <a
-            href={COMPANY_INFO.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow-lg shadow-emerald-600/20 transition-all flex-shrink-0"
-          >
-            <MessageSquare className="w-4 h-4" />
-            <span>Discuss Custom Architecture</span>
-          </a>
-        </div>
-
       </div>
 
       {/* Service Detail Modal */}
       {selectedService && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-          <div className="relative w-full max-w-2xl bg-[#0F172A] border border-slate-700 rounded-2xl p-6 sm:p-8 shadow-2xl max-h-[90vh] overflow-y-auto">
+          <div className="relative w-full max-w-2xl bg-white border border-slate-300 rounded-2xl p-6 sm:p-8 shadow-2xl max-h-[90vh] overflow-y-auto">
             
             {/* Close Button */}
             <button
               onClick={() => setSelectedService(null)}
-              className="absolute top-5 right-5 p-2 rounded-xl bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition-colors"
+              className="absolute top-5 right-5 p-2 rounded-xl bg-slate-200 text-slate-500 hover:text-slate-900 hover:bg-slate-700 transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
@@ -194,18 +177,18 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
               </div>
               <div>
                 <span className="text-xs font-mono text-cyan-400 uppercase tracking-wider">{selectedService.category}</span>
-                <h3 className="text-2xl font-bold text-white">{selectedService.title}</h3>
+                <h3 className="text-2xl font-bold text-slate-900">{selectedService.title}</h3>
               </div>
             </div>
 
             {/* Description */}
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+            <p className="text-slate-700 text-sm sm:text-base leading-relaxed mb-6">
               {selectedService.fullDesc}
             </p>
 
             {/* Key Capabilities */}
-            <div className="space-y-3 mb-6 bg-slate-900/80 p-5 rounded-xl border border-slate-800">
-              <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">Key Capabilities & Included Features</h4>
+            <div className="space-y-3 mb-6 bg-slate-100/80 p-5 rounded-xl border border-slate-200">
+              <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider">Key Capabilities & Included Features</h4>
               <ul className="space-y-2.5">
                 {selectedService.features.map((feat, i) => (
                   <li key={i} className="flex items-start gap-2.5 text-sm text-slate-200">
@@ -218,10 +201,10 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
 
             {/* Tech Tags */}
             <div className="mb-6">
-              <span className="text-xs font-mono text-slate-400 block mb-2">Recommended Tech Stack:</span>
+              <span className="text-xs font-mono text-slate-500 block mb-2">Recommended Tech Stack:</span>
               <div className="flex flex-wrap gap-2">
                 {selectedService.tags.map((t, idx) => (
-                  <span key={idx} className="text-xs px-2.5 py-1 rounded bg-slate-800 text-cyan-300 border border-slate-700">
+                  <span key={idx} className="text-xs px-2.5 py-1 rounded bg-slate-200 text-blue-600 border border-slate-300">
                     {t}
                   </span>
                 ))}
@@ -229,7 +212,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center gap-3 pt-4 border-t border-slate-800">
+            <div className="flex flex-col sm:flex-row items-center gap-3 pt-4 border-t border-slate-200">
               <button
                 onClick={() => {
                   if (onSelectServiceForDemo) {
@@ -251,7 +234,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-600/20 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-600/30 text-sm font-semibold transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white border border-emerald-500 text-sm font-semibold transition-all"
               >
                 <MessageSquare className="w-4 h-4" />
                 <span>Discuss on WhatsApp</span>

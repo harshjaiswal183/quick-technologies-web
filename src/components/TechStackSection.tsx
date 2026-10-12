@@ -37,7 +37,7 @@ export const TechStackSection: React.FC = () => {
   const filteredList = getFilteredTechnologies();
 
   return (
-    <section id="technologies" className="py-20 lg:py-28 relative bg-[#070C16]">
+    <section id="technologies" className="py-20 lg:py-28 relative bg-white">
       {/* Background Lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-600/10 blur-[150px] pointer-events-none rounded-full" />
 
@@ -50,14 +50,14 @@ export const TechStackSection: React.FC = () => {
             <span>Modern & Scalable Tooling</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             Our Technology{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-300">
               Stack & Frameworks
             </span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
             We employ modern, production-hardened languages, frameworks, cloud infrastructures, and analytics tools to engineer reliable software systems.
           </p>
         </div>
@@ -70,8 +70,8 @@ export const TechStackSection: React.FC = () => {
               onClick={() => setSelectedCategory(cat.key)}
               className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all ${
                 selectedCategory === cat.key
-                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30 border border-blue-500'
-                  : 'bg-slate-900/80 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800'
+                  ? 'bg-blue-600 text-slate-900 shadow-lg shadow-blue-600/30 border border-blue-500'
+                  : 'bg-slate-100/80 text-slate-500 hover:text-slate-900 hover:bg-slate-200 border border-slate-200'
               }`}
             >
               {cat.icon}
@@ -85,18 +85,18 @@ export const TechStackSection: React.FC = () => {
           {filteredList.map((tech, idx) => (
             <div
               key={idx}
-              className="group p-4 rounded-xl bg-slate-900/70 border border-slate-800 hover:border-blue-500/40 hover:bg-slate-800/80 transition-all duration-300 flex flex-col items-center text-center hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/10"
+              className="group p-4 rounded-xl bg-slate-100/70 border border-slate-200 hover:border-blue-500/40 hover:bg-slate-200/80 transition-all duration-300 flex flex-col items-center text-center hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/10"
             >
-              <div className="w-12 h-12 rounded-xl bg-slate-800 border border-slate-700/60 flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition-transform shadow-inner">
+              <div className="w-12 h-12 rounded-xl bg-slate-200 border border-slate-300/60 flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition-transform shadow-inner">
                 {tech.icon}
               </div>
-              <h3 className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors">
+              <h3 className="text-sm font-bold text-slate-900 group-hover:text-cyan-300 transition-colors">
                 {tech.name}
               </h3>
               <span className="text-[10px] text-cyan-400/90 font-mono mt-0.5">
                 {tech.category}
               </span>
-              <p className="text-[11px] text-slate-400 mt-1.5 leading-snug line-clamp-2">
+              <p className="text-[11px] text-slate-500 mt-1.5 leading-snug line-clamp-2">
                 {tech.desc}
               </p>
             </div>
@@ -104,8 +104,8 @@ export const TechStackSection: React.FC = () => {
         </div>
 
         {/* Editable confirmation disclaimer per prompt requirements */}
-        <div className="mt-12 p-4 rounded-xl bg-slate-900/60 border border-slate-800 text-center max-w-2xl mx-auto">
-          <p className="text-xs text-slate-400 flex items-center justify-center gap-2">
+        <div className="mt-12 p-4 rounded-xl bg-slate-100/60 border border-slate-200 text-center max-w-2xl mx-auto">
+          <p className="text-xs text-slate-500 flex items-center justify-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
             <span>Technologies are curated for modern enterprise performance and can be tailored to match your existing internal stack.</span>
           </p>

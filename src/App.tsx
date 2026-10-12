@@ -7,7 +7,6 @@ import { CustomSoftwareSection } from './components/CustomSoftwareSection';
 import { IndustriesSection } from './components/IndustriesSection';
 import { WhyChooseUs } from './components/WhyChooseUs';
 import { ProcessTimeline } from './components/ProcessTimeline';
-import { PortfolioSection } from './components/PortfolioSection';
 import { DemoBookingSection } from './components/DemoBookingSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { FAQSection } from './components/FAQSection';
@@ -35,7 +34,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#070C16] text-slate-100 selection:bg-blue-600 selection:text-white font-sans">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-blue-600 selection:text-white font-sans">
       
       {/* Top Navbar */}
       <Navbar onOpenDemoModal={handleOpenDemoModal} />
@@ -59,15 +58,12 @@ export function App() {
 
 
         {/* 7. Why Choose Us? */}
-        <WhyChooseUs onOpenDemoModal={handleOpenDemoModal} />
+        <WhyChooseUs />
 
         {/* 8. Development Process & Lifecycle */}
         <ProcessTimeline onOpenDemoModal={handleOpenDemoModal} />
 
-        {/* 9. Portfolio / Concept Work Showcase */}
-        <PortfolioSection onSelectProjectForDemo={handleSelectServiceForDemo} />
-
-        {/* 10. Book a Free Demo Request Form */}
+        {/* 9. Book a Free Demo Request Form */}
         <DemoBookingSection 
           preselectedService={selectedServiceForDemo}
           onClearPreselected={() => setSelectedServiceForDemo('Custom Software')}

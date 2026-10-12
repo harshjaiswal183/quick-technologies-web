@@ -10,7 +10,7 @@ export const FAQSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-20 lg:py-28 relative bg-[#090F1C] border-t border-slate-800/80">
+    <section id="faq" className="py-20 lg:py-28 relative bg-slate-50 border-t border-slate-200/80">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
@@ -20,14 +20,14 @@ export const FAQSection: React.FC = () => {
             <span>Got Questions?</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             Frequently Asked{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-300">
               Questions
             </span>
           </h2>
 
-          <p className="text-base text-slate-300">
+          <p className="text-base text-slate-700">
             Answers to common questions about our technical capabilities, custom workflows, integrations, and ongoing support.
           </p>
         </div>
@@ -41,8 +41,8 @@ export const FAQSection: React.FC = () => {
                 key={index}
                 className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                   isOpen
-                    ? 'bg-slate-900 border-blue-500/50 shadow-lg shadow-blue-500/5'
-                    : 'bg-slate-900/60 border-slate-800 hover:border-slate-700'
+                    ? 'bg-slate-100 border-blue-500/50 shadow-lg shadow-blue-500/5'
+                    : 'bg-slate-100/60 border-slate-200 hover:border-slate-300'
                 }`}
               >
                 <button
@@ -51,19 +51,19 @@ export const FAQSection: React.FC = () => {
                   aria-expanded={isOpen}
                 >
                   <span className={`text-base sm:text-lg font-bold transition-colors ${
-                    isOpen ? 'text-cyan-400' : 'text-white'
+                    isOpen ? 'text-cyan-400' : 'text-slate-900'
                   }`}>
                     {faq.question}
                   </span>
-                  <div className={`p-2 rounded-xl bg-slate-800 text-slate-300 flex-shrink-0 transition-transform duration-300 ${
-                    isOpen ? 'rotate-180 bg-blue-600 text-white' : ''
+                  <div className={`p-2 rounded-xl bg-slate-200 text-slate-700 flex-shrink-0 transition-transform duration-300 ${
+                    isOpen ? 'rotate-180 bg-blue-600 text-slate-900' : ''
                   }`}>
                     <ChevronDown className="w-4 h-4" />
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 pb-6 sm:px-6 text-sm text-slate-300 leading-relaxed border-t border-slate-800/80 pt-4 animate-in slide-in-from-top-2 duration-200">
+                  <div className="px-5 pb-6 sm:px-6 text-sm text-slate-700 leading-relaxed border-t border-slate-200/80 pt-4 animate-in slide-in-from-top-2 duration-200">
                     <p>{faq.answer}</p>
                   </div>
                 )}
@@ -73,16 +73,16 @@ export const FAQSection: React.FC = () => {
         </div>
 
         {/* Still have questions banner */}
-        <div className="mt-14 p-6 rounded-2xl bg-slate-900/80 border border-slate-800 text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-14 p-6 rounded-2xl bg-slate-100/80 border border-slate-200 text-center flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-center sm:text-left">
-            <h4 className="text-base font-bold text-white">Have a specific question not covered here?</h4>
-            <p className="text-xs text-slate-400">Our engineering leads are available directly on WhatsApp for real-time answers.</p>
+            <h4 className="text-base font-bold text-slate-900">Have a specific question not covered here?</h4>
+            <p className="text-xs text-slate-500">Our engineering leads are available directly on WhatsApp for real-time answers.</p>
           </div>
           <a
             href={COMPANY_INFO.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600/20 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-600/30 font-semibold text-xs transition-all flex-shrink-0"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs transition-all flex-shrink-0"
           >
             <MessageSquare className="w-4 h-4" />
             <span>Ask Us on WhatsApp</span>
